@@ -23,6 +23,7 @@ export default class Palette extends Component {
       <div className="Palette">
         {/* Navbar goes here  */}
         <Slider
+          className="slider"
           defaultValue={this.state.level}
           min={100}
           max={900}
