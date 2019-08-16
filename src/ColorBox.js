@@ -16,12 +16,8 @@ export default class ColorBox extends Component {
     const { copied } = this.state;
     return (
       <CopyContainer text={color} onCopy={this.handleColorCopy}>
-        <div className="ColorBox" style={{ backgroundColor: color }}>
+        <div className={`ColorBox ${copied && "show"}`} style={{ color }}>
           <button className="copy-button">Copy</button>
-          <div
-            className={`copy-overlay ${copied && "show"}`}
-            style={{ background: color }}
-          />
           <div className={`copy-overlay-text ${copied && "show"}`}>
             <h1>Copied</h1>
             <span>{color}</span>
