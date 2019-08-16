@@ -68,7 +68,7 @@
 }
 
 .ColorBox.show::before {
-  transform: scale(45);
+  transform: scale(60);
   width: 50px;
   height: 50px;
 }

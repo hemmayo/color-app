@@ -1,0 +1,47 @@
+.Navbar {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+}
+
+.logo {
+  flex-basis: 8%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.level-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.slider.rc-slider {
+  width: 340px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.slider.rc-slider .rc-slider-rail {
+  height: 8px;
+}
+.slider.rc-slider .rc-slider-track {
+  background: transparent;
+}
+.slider.rc-slider .rc-slider-handle,
+.slider.rc-slider .rc-slider-handle:active,
+.slider.rc-slider .rc-slider-handle:hover,
+.slider.rc-slider .rc-slider-handle:focus {
+  background-color: green;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid green;
+  width: 13px;
+  height: 13px;
+  margin-left: -7px;
+  margin-top: -3px;
+}
