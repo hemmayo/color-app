@@ -3,12 +3,10 @@ import Palette from "./Palette";
 import seedColors from "./seedColors";
 import colorsHelper from "./colorsHelper";
 
-console.log(colorsHelper(seedColors[4]));
-
 function App() {
   return (
     <div>
-      <Palette {...seedColors[4]} />
+      <Palette palette={colorsHelper(seedColors[4])} />
     </div>
   );
 }

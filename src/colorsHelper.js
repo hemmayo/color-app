@@ -23,20 +23,27 @@ function getScale(hexColors, numberOfColors) {
 export default starterPalette => {
   let newPalette = {
     ...starterPalette,
-    colors: []
+    colors: {}
   };
+
   levels.map(level => (newPalette.colors[level] = []));
+
   starterPalette.colors.map((color, i) => {
-    let scale = getScale(color.color, newPalette.colors.length).reverse();
-    return (newPalette.colors[levels[i]] += {
-      name: `${color.name} ${levels[i]}`,
-      id: color.name.toLowerCase().replace(/ /g, "-"),
-      hex: scale[i],
-      rgb: chroma(scale[i]).css(),
-      rgba: chroma(scale[i])
-        .css()
-        .replace(")", ", 1.0)")
-    });
+    let scale = getScale(color.color, 10).reverse();
+
+    for (let i in scale) {
+      newPalette.colors[levels[i]].push({
+        name: `${color.name} ${levels[i]}`,
+        id: color.name.toLowerCase().replace(/ /g, "-"),
+        hex: scale[i],
+        rgb: chroma(scale[i]).css(),
+        rgba: chroma(scale[i])
+          .css()
+          .replace(")", ",1.0)")
+      });
+    }
+    return undefined;
   });
+
   return newPalette;
 };
