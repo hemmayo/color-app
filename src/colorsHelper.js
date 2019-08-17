@@ -39,6 +39,7 @@ export default starterPalette => {
         rgb: chroma(scale[i]).css(),
         rgba: chroma(scale[i])
           .css()
+          .replace("rgb", "rgba")
           .replace(")", ",1.0)")
       });
     }

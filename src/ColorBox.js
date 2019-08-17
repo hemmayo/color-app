@@ -12,7 +12,8 @@ export default class ColorBox extends Component {
     );
   };
   render() {
-    const { hex: color, name } = this.props;
+    const format = this.props.format;
+    const { [format]: color, name } = this.props;
     const { copied } = this.state;
     return (
       <CopyContainer text={color} onCopy={this.handleColorCopy}>
