@@ -7,7 +7,8 @@ import Navbar from "./Navbar";
 export default class Palette extends Component {
   state = {
     level: 400,
-    format: "hex"
+    format: "hex",
+    snackbarIsOpen: false
   };
 
   changeLevel = level => {
@@ -15,11 +16,15 @@ export default class Palette extends Component {
   };
 
   changeFormat = e => {
-    this.setState({ format: e.target.value });
+    this.setState({ format: e.target.value, snackbarIsOpen: true });
+  };
+
+  closeSnackbar = () => {
+    this.setState({ snackbarIsOpen: false });
   };
 
   render() {
-    const { level, format } = this.state;
+    const { level, format, snackbarIsOpen } = this.state;
     const { palette } = this.props;
     const colorBoxes = palette.colors[level].map((color, i) => (
       <ColorBox key={i} format={format} {...color} />
@@ -28,6 +33,8 @@ export default class Palette extends Component {
       <div className="Palette">
         {/* Navbar goes here  */}
         <Navbar
+          snackbarIsOpen={snackbarIsOpen}
+          closeSnackbar={this.closeSnackbar}
           changeFormat={this.changeFormat}
           format={format}
           changeLevel={this.changeLevel}

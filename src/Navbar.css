@@ -4,20 +4,28 @@
   width: 100%;
 }
 
-.logo {
-  flex-basis: 8%;
-  background-color: #ddd;
+.Navbar > * {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  flex-basis: 8%;
+  background-color: #ddd;
   font-weight: bold;
 }
 
 .level-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 1rem;
+}
+
+.select-container {
+  margin-left: auto;
+  margin-right: 1rem;
 }
 
 .slider.rc-slider {
