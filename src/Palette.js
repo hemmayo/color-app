@@ -42,7 +42,10 @@ export default class Palette extends Component {
         />
         {/* <h1>{this.props.paletteName}</h1> */}
         <div className="Palette-colors">{colorBoxes} </div>
-        {/* Footer goes here */}
+        <footer className="Palette-footer">
+          {palette.paletteName}
+          <span className="footer-emoji">{palette.emoji}</span>
+        </footer>
       </div>
     );
   }
