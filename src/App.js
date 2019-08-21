@@ -4,6 +4,9 @@ import Palette from "./Palette";
 import seedColors from "./seedColors";
 import colorsHelper from "./colorsHelper";
 
+const findPalette = id => {
+  return seedColors.find(palette => palette.id === id);
+};
 function App() {
   return (
     <Switch>
@@ -11,7 +14,11 @@ function App() {
       <Route
         exact
         path="/palette/:id"
-        render={() => <h1>Welcome to the route</h1>}
+        render={routeProps => (
+          <Palette
+            palette={colorsHelper(findPalette(routeProps.match.params.id))}
+          />
+        )}
       />
     </Switch>
     // <div>
