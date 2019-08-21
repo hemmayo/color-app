@@ -25,10 +25,11 @@ const styles = {
     justifyContent: "space-between"
   },
   palettes: {
-    borderBox: "100%",
+    boxSizing: "border-box",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 30%)",
-    gridGap: "5%"
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridGap: "5%",
+    width: "100%"
   }
 };
 
